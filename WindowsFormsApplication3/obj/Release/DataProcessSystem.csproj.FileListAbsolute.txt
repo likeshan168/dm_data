@@ -1,0 +1,6 @@
+E:\一秒通文件\数据处理平台new\admt标准版\WindowsFormsApplication3\bin\Release\DataProcessSystem.exe.config
+E:\一秒通文件\数据处理平台new\admt标准版\WindowsFormsApplication3\obj\Release\ResolveAssemblyReference.cache
+E:\一秒通文件\数据处理平台new\admt标准版\WindowsFormsApplication3\obj\Release\WindowsFormsApplication3.frmMain.resources
+E:\一秒通文件\数据处理平台new\admt标准版\WindowsFormsApplication3\obj\Release\WindowsFormsApplication3.Properties.Resources.resources
+E:\一秒通文件\数据处理平台new\admt标准版\WindowsFormsApplication3\obj\Release\GenerateResource.read.1.tlog
+E:\一秒通文件\数据处理平台new\admt标准版\WindowsFormsApplication3\obj\Release\GenerateResource.write.1.tlog

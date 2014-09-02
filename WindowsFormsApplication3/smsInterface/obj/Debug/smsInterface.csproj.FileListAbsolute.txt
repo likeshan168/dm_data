@@ -1,0 +1,5 @@
+E:\smsInterface\smsInterface\bin\Debug\smsInterface.dll
+E:\smsInterface\smsInterface\bin\Debug\smsInterface.pdb
+E:\smsInterface\smsInterface\obj\Debug\ResolveAssemblyReference.cache
+E:\smsInterface\smsInterface\obj\Debug\smsInterface.dll
+E:\smsInterface\smsInterface\obj\Debug\smsInterface.pdb

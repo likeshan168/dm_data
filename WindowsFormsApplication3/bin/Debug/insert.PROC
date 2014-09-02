@@ -1,0 +1,7 @@
+create proc BatchInsert  
+as  
+insert into cardinfo(card_Id,card_Type,card_Discount,userName,userSex,userTitle,userBirthday,userPhone,userMobile,userEmail,  
+userCode,userPost,userAddress,sendClient,sendMan,beginDate,endDate,points,pwd,remark)  
+select card_Id,card_Type,card_Discount,userName,userSex,userTitle,userBirthday,userPhone,userMobile,userEmail,  
+userCode,userPost,userAddress,sendClient,sendMan,beginDate,endDate,points,pwd,remark from cardinf ;  
+insert into UD_Fileds(card_id) select card_id from cardinfo  

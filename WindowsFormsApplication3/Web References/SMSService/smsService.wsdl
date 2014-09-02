@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="init">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="initResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="initResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="register">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="innerAl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="registerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="smsTableString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sendSMSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBalanceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getClientBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getClientBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getClientBalanceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="chargUp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardPWD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="chargUpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chargUpResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnRegister">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnRegisterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UnRegisterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="accountTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="accountTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountTestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="initSoapIn">
+    <wsdl:part name="parameters" element="tns:init" />
+  </wsdl:message>
+  <wsdl:message name="initSoapOut">
+    <wsdl:part name="parameters" element="tns:initResponse" />
+  </wsdl:message>
+  <wsdl:message name="registerSoapIn">
+    <wsdl:part name="parameters" element="tns:register" />
+  </wsdl:message>
+  <wsdl:message name="registerSoapOut">
+    <wsdl:part name="parameters" element="tns:registerResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:sendSMS" />
+  </wsdl:message>
+  <wsdl:message name="sendSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:sendSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:getBalance" />
+  </wsdl:message>
+  <wsdl:message name="getBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:getBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="getClientBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:getClientBalance" />
+  </wsdl:message>
+  <wsdl:message name="getClientBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:getClientBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="chargUpSoapIn">
+    <wsdl:part name="parameters" element="tns:chargUp" />
+  </wsdl:message>
+  <wsdl:message name="chargUpSoapOut">
+    <wsdl:part name="parameters" element="tns:chargUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnRegisterSoapIn">
+    <wsdl:part name="parameters" element="tns:UnRegister" />
+  </wsdl:message>
+  <wsdl:message name="UnRegisterSoapOut">
+    <wsdl:part name="parameters" element="tns:UnRegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="accountTestSoapIn">
+    <wsdl:part name="parameters" element="tns:accountTest" />
+  </wsdl:message>
+  <wsdl:message name="accountTestSoapOut">
+    <wsdl:part name="parameters" element="tns:accountTestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="smsServiceSoap">
+    <wsdl:operation name="init">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">初始化数据结构</wsdl:documentation>
+      <wsdl:input message="tns:initSoapIn" />
+      <wsdl:output message="tns:initSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="register">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">注册序列号</wsdl:documentation>
+      <wsdl:input message="tns:registerSoapIn" />
+      <wsdl:output message="tns:registerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendSMS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">短信发送</wsdl:documentation>
+      <wsdl:input message="tns:sendSMSSoapIn" />
+      <wsdl:output message="tns:sendSMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBalance">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">主账户余额查询</wsdl:documentation>
+      <wsdl:input message="tns:getBalanceSoapIn" />
+      <wsdl:output message="tns:getBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClientBalance">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">客户余额查询</wsdl:documentation>
+      <wsdl:input message="tns:getClientBalanceSoapIn" />
+      <wsdl:output message="tns:getClientBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="chargUp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">充值</wsdl:documentation>
+      <wsdl:input message="tns:chargUpSoapIn" />
+      <wsdl:output message="tns:chargUpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnRegister">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">注销账号</wsdl:documentation>
+      <wsdl:input message="tns:UnRegisterSoapIn" />
+      <wsdl:output message="tns:UnRegisterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="accountTest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">账号检测</wsdl:documentation>
+      <wsdl:input message="tns:accountTestSoapIn" />
+      <wsdl:output message="tns:accountTestSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="smsServiceSoap" type="tns:smsServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="init">
+      <soap:operation soapAction="http://tempuri.org/init" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="register">
+      <soap:operation soapAction="http://tempuri.org/register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendSMS">
+      <soap:operation soapAction="http://tempuri.org/sendSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBalance">
+      <soap:operation soapAction="http://tempuri.org/getBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientBalance">
+      <soap:operation soapAction="http://tempuri.org/getClientBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="chargUp">
+      <soap:operation soapAction="http://tempuri.org/chargUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnRegister">
+      <soap:operation soapAction="http://tempuri.org/UnRegister" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accountTest">
+      <soap:operation soapAction="http://tempuri.org/accountTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="smsServiceSoap12" type="tns:smsServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="init">
+      <soap12:operation soapAction="http://tempuri.org/init" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="register">
+      <soap12:operation soapAction="http://tempuri.org/register" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendSMS">
+      <soap12:operation soapAction="http://tempuri.org/sendSMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBalance">
+      <soap12:operation soapAction="http://tempuri.org/getBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientBalance">
+      <soap12:operation soapAction="http://tempuri.org/getClientBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="chargUp">
+      <soap12:operation soapAction="http://tempuri.org/chargUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnRegister">
+      <soap12:operation soapAction="http://tempuri.org/UnRegister" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="accountTest">
+      <soap12:operation soapAction="http://tempuri.org/accountTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="smsService">
+    <wsdl:port name="smsServiceSoap" binding="tns:smsServiceSoap">
+      <soap:address location="http://219.232.48.105:8089/smsService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="smsServiceSoap12" binding="tns:smsServiceSoap12">
+      <soap12:address location="http://219.232.48.105:8089/smsService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

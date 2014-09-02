@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <section name="WindowsFormsApplication3.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false"/>
+    </sectionGroup>
+  </configSections>
+  <appSettings>
+    <!--<add key="username" value="eissykids"/>
+    <add key="password" value="eissykids0829"/>--><!--上云端-->
+
+    <!--<add key="username" value="xuwei"/>
+    <add key="password" value="xuwei"/>--><!--测试-->
+
+    <!--<add key="username" value="wenshitesx"/>
+    <add key="password" value="wenshitesx1207"/>--><!--文时特-->
+    
+    <add key="username" value="kurki"/>
+    <add key="password" value="kurki"/><!--古奇-->
+    
+    <!--<add key="username" value="dongfyz"/>
+    <add key="password" value="dongfyz1205"/>--><!--东方一族-->
+
+    <add key="serverIP" value="219.232.48.105"/>
+    <!--服务器的ip地址-->
+    <add key="Port" value="11001"/>
+    <!--服务器通讯的端口号-->
+
+    <!--<add key="Basecon" value="server=219.232.48.105;database=DM_Eissy;uid=sa;pwd=empoxweb!@90zgtyb"/>-->
+    <!--<add key="Basecon" value="server=192.168.1.5;database=dm_test;uid=sa;pwd="/>-->
+    <!--<add key="Basecon" value="server=127.0.0.1;database=dm_lks;Integrated Security=SSPI;"/>-->
+    <add key="Basecon" value="server=127.0.0.1;database=DM_GUQI;uid=sa;pwd=123456;"/>
+    <!--<add key="Basecon" value="server=127.0.0.1;database=dm_test;uid=sa;pwd=123456;"/>-->
+    <add key="localBase" value="DM_GUQI"/>
+    <!--<add key="Basecon" value="server=192.168.1.113;database=master;uid=sa;pwd="/>-->
+
+    <add key="SmtpServer" value="smtp.ym.163.com"/>
+    <add key="SmtpPort" value="25"/>
+    <add key="SmtpUser" value="xuwei@empox.cn"/>
+    <add key="SmtpPwd" value="44513457"/>
+    <add key="DefaultShop" value="H209"/>
+    <add key="DefaultSales" value="209001"/>
+    <add key="CouponValue" value="10"/>
+    <add key="UseDate" value="1"/>
+    <add key="SMSSuffix"  value="[古琦时装]" />
+    <!--<add key="SMSSuffix"  value="[鹰普世]" />-->
+    <!--<add key="SMSSuffix"  value="[文时特]" />-->
+    <!--短信后缀-->
+    <!--<add key="DefaultV" value="888888" />-->
+    <add key="SMSFlag" value="1"/>
+    <!--<add key="DefaultCompanyID" value="02101"/>-->
+    <!--eissy的公司id-->
+    <!--<add key="DefaultCompanyID" value="10008"/>-->
+    <add key="DefaultCompanyID" value="01043"/><!--古奇-->
+    <!--测试用的公司id-->
+    <!--<add key="DefaultCompanyID" value="0006"/>-->
+    <!--<add key="DefaultCompanyID" value="02113"/>--><!--文时特-->
+    <add key="ClientSettingsProvider.ServiceUri" value=""/>
+  </appSettings>
+  <system.web>
+    <membership defaultProvider="ClientAuthenticationMembershipProvider">
+      <providers>
+        <add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri=""/>
+      </providers>
+    </membership>
+    <roleManager defaultProvider="ClientRoleProvider" enabled="true">
+      <providers>
+        <add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400"/>
+      </providers>
+    </roleManager>
+  </system.web>
+  <applicationSettings>
+    <WindowsFormsApplication3.Properties.Settings>
+      <setting name="DataProcessSystem_SMSService_smsService" serializeAs="String">
+        <value>http://219.232.48.105:8089/smsService.asmx</value>
+      </setting>
+      <setting name="DataProcessSystem_Getcoupon_couponService" serializeAs="String">
+        <value>http://192.168.1.115/guqi/webService/couponService.asmx</value>
+      </setting>
+    </WindowsFormsApplication3.Properties.Settings>
+  </applicationSettings>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/>
+  </startup>
+</configuration>

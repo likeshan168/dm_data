@@ -1,0 +1,19 @@
+CREATE proc BatchUpdataInsert  
+as  
+if exists(select * from sysobjects where id = object_id(N'[dbo].[tempaa]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)  
+drop table tempaa  
+if exists(select * from sysobjects where id = object_id(N'[dbo].[tempbb]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)  
+drop table tempbb  
+update cardinfo set card_Id=b.card_Id,card_Type=b.card_Type,card_Discount=b.card_Discount,userName=b.userName,userSex=b.userSex,  
+userTitle=b.userTitle,userBirthday=b.userBirthday,userPhone=b.userPhone,userMobile=b.userMobile,  
+userEmail=b.userEmail,userCode=b.userCode,userPost=b.userPost,userAddress=b.userAddress,sendClient=b.sendClient,  
+sendMan=b.sendMan,beginDate=b.beginDate,endDate=b.endDate,points=b.points,remark=b.remark   
+from cardinfo,cardinf b where cardinfo.card_Id=b.card_Id  
+insert into cardinfo  
+select card_Id,card_Type,card_Discount,userName,userSex,userTitle,userBirthday,userPhone,userMobile,userEmail,  
+userCode,userPost,userAddress,sendClient,sendMan,beginDate,endDate,points,pwd,remark from cardinf card  
+where not exists(select * from cardinfo where Card_ID=card.Card_ID)  
+insert into UD_Fileds (card_id)    
+select card_Id from cardinf cardb    
+where not exists(select * from UD_Fileds where Card_ID=cardb.Card_ID) 
+ 

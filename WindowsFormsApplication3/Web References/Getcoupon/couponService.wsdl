@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetNewPCwithTid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewPCwithTidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewPCwithTidResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPCwithTID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPCwithTIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPCwithTIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewPCwithPOS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewPCwithPOSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewPCwithPOSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCouponType">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCouponTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCouponTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidatePC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidatePCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidatePCResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsumePC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsumePCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsumePCResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="csmSuccess">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="csmSuccessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="csmSuccessResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZF_SMS_DATA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZF_SMS_DATAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetZF_SMS_DATAResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSMS_DATA_STATE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="upID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSMS_DATA_STATEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetSMS_DATA_STATEResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChangePointPC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChangePointPCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChangePointPCResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelChangePointLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="upID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelChangePointLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DelChangePointLogResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosVipOpenPC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosVipOpenPCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PosVipOpenPCResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSaleMsg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSaleMsgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendSaleMsgResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendLpcApplyResMsg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendLpcApplyResMsgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendLpcApplyResMsgResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hello">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="x" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="helloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="helloResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetNewPCwithTidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewPCwithTid" />
+  </wsdl:message>
+  <wsdl:message name="GetNewPCwithTidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewPCwithTidResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPCwithTIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPCwithTID" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPCwithTIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPCwithTIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewPCwithPOSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewPCwithPOS" />
+  </wsdl:message>
+  <wsdl:message name="GetNewPCwithPOSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewPCwithPOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCouponTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:getCouponType" />
+  </wsdl:message>
+  <wsdl:message name="getCouponTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:getCouponTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidatePCSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidatePC" />
+  </wsdl:message>
+  <wsdl:message name="ValidatePCSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidatePCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsumePCSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsumePC" />
+  </wsdl:message>
+  <wsdl:message name="ConsumePCSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsumePCResponse" />
+  </wsdl:message>
+  <wsdl:message name="csmSuccessSoapIn">
+    <wsdl:part name="parameters" element="tns:csmSuccess" />
+  </wsdl:message>
+  <wsdl:message name="csmSuccessSoapOut">
+    <wsdl:part name="parameters" element="tns:csmSuccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetZF_SMS_DATASoapIn">
+    <wsdl:part name="parameters" element="tns:GetZF_SMS_DATA" />
+  </wsdl:message>
+  <wsdl:message name="GetZF_SMS_DATASoapOut">
+    <wsdl:part name="parameters" element="tns:GetZF_SMS_DATAResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSMS_DATA_STATESoapIn">
+    <wsdl:part name="parameters" element="tns:SetSMS_DATA_STATE" />
+  </wsdl:message>
+  <wsdl:message name="SetSMS_DATA_STATESoapOut">
+    <wsdl:part name="parameters" element="tns:SetSMS_DATA_STATEResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChangePointPCSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChangePointPC" />
+  </wsdl:message>
+  <wsdl:message name="GetChangePointPCSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChangePointPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelChangePointLogSoapIn">
+    <wsdl:part name="parameters" element="tns:DelChangePointLog" />
+  </wsdl:message>
+  <wsdl:message name="DelChangePointLogSoapOut">
+    <wsdl:part name="parameters" element="tns:DelChangePointLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="PosVipOpenPCSoapIn">
+    <wsdl:part name="parameters" element="tns:PosVipOpenPC" />
+  </wsdl:message>
+  <wsdl:message name="PosVipOpenPCSoapOut">
+    <wsdl:part name="parameters" element="tns:PosVipOpenPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSaleMsgSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSaleMsg" />
+  </wsdl:message>
+  <wsdl:message name="SendSaleMsgSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSaleMsgResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendLpcApplyResMsgSoapIn">
+    <wsdl:part name="parameters" element="tns:SendLpcApplyResMsg" />
+  </wsdl:message>
+  <wsdl:message name="SendLpcApplyResMsgSoapOut">
+    <wsdl:part name="parameters" element="tns:SendLpcApplyResMsgResponse" />
+  </wsdl:message>
+  <wsdl:message name="helloSoapIn">
+    <wsdl:part name="parameters" element="tns:hello" />
+  </wsdl:message>
+  <wsdl:message name="helloSoapOut">
+    <wsdl:part name="parameters" element="tns:helloResponse" />
+  </wsdl:message>
+  <wsdl:portType name="couponServiceSoap">
+    <wsdl:operation name="GetNewPCwithTid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">单次申请优惠券编号</wsdl:documentation>
+      <wsdl:input message="tns:GetNewPCwithTidSoapIn" />
+      <wsdl:output message="tns:GetNewPCwithTidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPCwithTID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">批量申请优惠券编号</wsdl:documentation>
+      <wsdl:input message="tns:GetAllPCwithTIDSoapIn" />
+      <wsdl:output message="tns:GetAllPCwithTIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewPCwithPOS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">POS申请优惠券编号</wsdl:documentation>
+      <wsdl:input message="tns:GetNewPCwithPOSSoapIn" />
+      <wsdl:output message="tns:GetNewPCwithPOSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCouponType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取可用优惠券类型</wsdl:documentation>
+      <wsdl:input message="tns:getCouponTypeSoapIn" />
+      <wsdl:output message="tns:getCouponTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">校验优惠券编号</wsdl:documentation>
+      <wsdl:input message="tns:ValidatePCSoapIn" />
+      <wsdl:output message="tns:ValidatePCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsumePC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">消费优惠券</wsdl:documentation>
+      <wsdl:input message="tns:ConsumePCSoapIn" />
+      <wsdl:output message="tns:ConsumePCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="csmSuccess">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">消费成功扣减积分</wsdl:documentation>
+      <wsdl:input message="tns:csmSuccessSoapIn" />
+      <wsdl:output message="tns:csmSuccessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZF_SMS_DATA">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取直复平台处理后需发短信数据</wsdl:documentation>
+      <wsdl:input message="tns:GetZF_SMS_DATASoapIn" />
+      <wsdl:output message="tns:GetZF_SMS_DATASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSMS_DATA_STATE">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除DM接收的短信数据</wsdl:documentation>
+      <wsdl:input message="tns:SetSMS_DATA_STATESoapIn" />
+      <wsdl:output message="tns:SetSMS_DATA_STATESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChangePointPC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取已使用但未扣减的优惠券相关信息</wsdl:documentation>
+      <wsdl:input message="tns:GetChangePointPCSoapIn" />
+      <wsdl:output message="tns:GetChangePointPCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelChangePointLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除积分换礼已扣减记录</wsdl:documentation>
+      <wsdl:input message="tns:DelChangePointLogSoapIn" />
+      <wsdl:output message="tns:DelChangePointLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PosVipOpenPC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">发送会员Pos开卡短信</wsdl:documentation>
+      <wsdl:input message="tns:PosVipOpenPCSoapIn" />
+      <wsdl:output message="tns:PosVipOpenPCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSaleMsg">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">发送会员销售短信</wsdl:documentation>
+      <wsdl:input message="tns:SendSaleMsgSoapIn" />
+      <wsdl:output message="tns:SendSaleMsgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendLpcApplyResMsg">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">发送优惠券申请结果消息</wsdl:documentation>
+      <wsdl:input message="tns:SendLpcApplyResMsgSoapIn" />
+      <wsdl:output message="tns:SendLpcApplyResMsgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hello">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">helloworld</wsdl:documentation>
+      <wsdl:input message="tns:helloSoapIn" />
+      <wsdl:output message="tns:helloSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="couponServiceSoap" type="tns:couponServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetNewPCwithTid">
+      <soap:operation soapAction="http://tempuri.org/GetNewPCwithTid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPCwithTID">
+      <soap:operation soapAction="http://tempuri.org/GetAllPCwithTID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewPCwithPOS">
+      <soap:operation soapAction="http://tempuri.org/GetNewPCwithPOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCouponType">
+      <soap:operation soapAction="http://tempuri.org/getCouponType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePC">
+      <soap:operation soapAction="http://tempuri.org/ValidatePC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsumePC">
+      <soap:operation soapAction="http://tempuri.org/ConsumePC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="csmSuccess">
+      <soap:operation soapAction="http://tempuri.org/csmSuccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZF_SMS_DATA">
+      <soap:operation soapAction="http://tempuri.org/GetZF_SMS_DATA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSMS_DATA_STATE">
+      <soap:operation soapAction="http://tempuri.org/SetSMS_DATA_STATE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChangePointPC">
+      <soap:operation soapAction="http://tempuri.org/GetChangePointPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelChangePointLog">
+      <soap:operation soapAction="http://tempuri.org/DelChangePointLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosVipOpenPC">
+      <soap:operation soapAction="http://tempuri.org/PosVipOpenPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSaleMsg">
+      <soap:operation soapAction="http://tempuri.org/SendSaleMsg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendLpcApplyResMsg">
+      <soap:operation soapAction="http://tempuri.org/SendLpcApplyResMsg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hello">
+      <soap:operation soapAction="http://tempuri.org/hello" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="couponServiceSoap12" type="tns:couponServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetNewPCwithTid">
+      <soap12:operation soapAction="http://tempuri.org/GetNewPCwithTid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPCwithTID">
+      <soap12:operation soapAction="http://tempuri.org/GetAllPCwithTID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewPCwithPOS">
+      <soap12:operation soapAction="http://tempuri.org/GetNewPCwithPOS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCouponType">
+      <soap12:operation soapAction="http://tempuri.org/getCouponType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePC">
+      <soap12:operation soapAction="http://tempuri.org/ValidatePC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsumePC">
+      <soap12:operation soapAction="http://tempuri.org/ConsumePC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="csmSuccess">
+      <soap12:operation soapAction="http://tempuri.org/csmSuccess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZF_SMS_DATA">
+      <soap12:operation soapAction="http://tempuri.org/GetZF_SMS_DATA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSMS_DATA_STATE">
+      <soap12:operation soapAction="http://tempuri.org/SetSMS_DATA_STATE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChangePointPC">
+      <soap12:operation soapAction="http://tempuri.org/GetChangePointPC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelChangePointLog">
+      <soap12:operation soapAction="http://tempuri.org/DelChangePointLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosVipOpenPC">
+      <soap12:operation soapAction="http://tempuri.org/PosVipOpenPC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSaleMsg">
+      <soap12:operation soapAction="http://tempuri.org/SendSaleMsg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendLpcApplyResMsg">
+      <soap12:operation soapAction="http://tempuri.org/SendLpcApplyResMsg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hello">
+      <soap12:operation soapAction="http://tempuri.org/hello" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="couponService">
+    <wsdl:port name="couponServiceSoap" binding="tns:couponServiceSoap">
+      <soap:address location="http://192.168.1.115/guqi/webService/couponService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="couponServiceSoap12" binding="tns:couponServiceSoap12">
+      <soap12:address location="http://192.168.1.115/guqi/webService/couponService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
